@@ -4,12 +4,14 @@ import "./tailwind.css";
 import TailwinddCSS from "./TailwindCSS";
 import FrameworkList from "./FrameworkList";
 import FrameworkListSearchFilter from "./FrameworkListSearchFilter";
+import ResponsiveText from "./ResponsiveDesign";
 
 createRoot(document.getElementById("root"))
     .render(
         <div>
             {/* Tes */}
             {/* <FrameworkList/> */}
-            <FrameworkListSearchFilter/>
+            {/* <FrameworkListSearchFilter/> */}
+            <ResponsiveText/>
         </div>
     )
