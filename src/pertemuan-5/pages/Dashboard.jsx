@@ -2,6 +2,7 @@ import { FaShoppingCart, FaTruck, FaBan, FaDollarSign, FaArrowUp, FaArrowDown, F
 import PageHeader from "../components/PageHeader";
 
 export default function Dashboard() {
+  
   const stats = [
     { title: "Total Orders", value: "128", icon: <FaShoppingCart />, color: "orange", change: "+15%", up: true, bg: "from-orange-100 to-orange-200" },
     { title: "Total Delivered", value: "98", icon: <FaTruck />, color: "teal", change: "+22%", up: true, bg: "from-teal-100 to-teal-200" },

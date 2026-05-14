@@ -1,43 +1,41 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./assets/tailwind.css";
-import Sidebar from "./layouts/Sidebar";
-import Header from "./layouts/Header";
-import Dashboard from "./pages/Dashboard";
+import React, { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import Orders from "./pages/Orders";
-import Customers from "./pages/Customers";
-import NotFound from "./pages/NotFound";
-import Error400 from "./pages/Error400";
-import Error401 from "./pages/Error401";
-import Error403 from "./pages/Error403";
+import MainLayout from "./layouts/MainLayout";
+import AuthLayout from "./layouts/AuthLayout";
+import Loading from "./components/Loading";
 
-function App() {
-  const [count, setCount] = useState(0);
+const Dashboard = React.lazy(() => import("./pages/Dashboard"));
+const Orders = React.lazy(() => import("./pages/Orders"));
+const Customers = React.lazy(() => import("./pages/Customers"));
+const NotFound = React.lazy(() => import("./pages/NotFound"));
+const Error400 = React.lazy(() => import("./pages/Error400"));
+const Error401 = React.lazy(() => import("./pages/Error401"));
+const Error403 = React.lazy(() => import("./pages/Error403"));
+const Login = React.lazy(() => import("./pages/Auth/Login"));
+const Forgot = React.lazy(() => import("./pages/Auth/Forgot"));
+const Register = React.lazy(() => import("./pages/Auth/Register"));
 
+export default function App() {
   return (
-    <div className="bg-gray-100 min-h-screen flex">
-      <Sidebar />
+    <Suspense fallback={<Loading />}>
+      <Routes>
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/orders" element={<Orders />} />
+        <Route path="/customers" element={<Customers />} />
+        <Route path="/error-400" element={<Error400 />} />
+        <Route path="/error-401" element={<Error401 />} />
+        <Route path="/error-403" element={<Error403 />} />
+        <Route path="*" element={<NotFound />} />
+      </Route>
 
-      <div className="flex-1 p-4">
-        <Header />
-        <Routes>
-           <Route path="*" element={<NotFound />} />
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/orders" element={<Orders />} />
-          <Route path="/customers" element={<Customers />} />
-          <Route path="/error-400" element={<Error400 />} />
-          <Route path="/error-401" element={<Error401 />} />
-          <Route path="/error-403" element={<Error403 />} />
-        </Routes>
-      </div>
-    </div>
+      <Route element={<AuthLayout />}>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/forgot" element={<Forgot />} />
+      </Route>
+    </Routes>
+    </Suspense>
+    
   );
 }
-
-export default App;
-
-
-
-

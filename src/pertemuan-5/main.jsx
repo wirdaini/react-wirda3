@@ -10,7 +10,6 @@ createRoot(document.getElementById("root")).render(
     <div className="bg-gray-100 min-h-screen flex">
       <Sidebar />
 
-
       <div className="flex-1 p-4">
         <Header />
         <Dashboard />
