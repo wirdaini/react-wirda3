@@ -1,14 +1,21 @@
-import { FaPlus, FaTachometerAlt, FaShoppingBag, FaUsers, FaChartLine, FaCog, FaExclamationTriangle } from "react-icons/fa";
+import {
+  FaPlus,
+  FaTachometerAlt,
+  FaShoppingBag,
+  FaUsers,
+  FaChartLine,
+  FaCog,
+  FaExclamationTriangle,
+  FaBoxOpen,
+} from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 export default function Sidebar() {
- 
   const menuItems = [
     { name: "Dashboard", icon: <FaTachometerAlt />, to: "/" },
     { name: "Orders", icon: <FaShoppingBag />, to: "/orders" },
     { name: "Customers", icon: <FaUsers />, to: "/customers" },
-
-    // 🔥 ERROR MENU (DITAMBAHKAN)
+    { name: "Products", icon: <FaBoxOpen />, to: "/products" },
     { name: "Error 400", icon: <FaExclamationTriangle />, to: "/error-400" },
     { name: "Error 401", icon: <FaExclamationTriangle />, to: "/error-401" },
     { name: "Error 403", icon: <FaExclamationTriangle />, to: "/error-403" },
@@ -19,14 +26,14 @@ export default function Sidebar() {
 
   const menuClass = ({ isActive }) =>
     `flex cursor-pointer items-center rounded-xl p-4 space-x-2
-    ${isActive ?
-      "text-hijau bg-green-200 font-extrabold" :
-      "text-gray-600 hover:text-hijau hover:bg-green-200 hover:font-extrabold"
+    ${
+      isActive
+        ? "text-hijau bg-green-200 font-extrabold"
+        : "text-gray-600 hover:text-hijau hover:bg-green-200 hover:font-extrabold"
     }`;
 
   return (
     <div className="flex min-h-screen w-80 flex-col bg-white/90 backdrop-blur-md shadow-2xl rounded-r-3xl border-r border-white/30">
-
       {/* Logo */}
       <div className="flex flex-col p-6 border-b border-gray-100">
         <span className="font-poppins text-[48px] text-gray-800 tracking-tight">
@@ -39,7 +46,9 @@ export default function Sidebar() {
 
       {/* Menu */}
       <div className="mt-6 px-4">
-        <p className="text-xs font-bold text-gray-400 uppercase mb-4">Main Menu</p>
+        <p className="text-xs font-bold text-gray-400 uppercase mb-4">
+          Main Menu
+        </p>
 
         <ul className="space-y-2">
           {menuItems.map((item, idx) => (
@@ -73,8 +82,6 @@ export default function Sidebar() {
           &copy; 2025 Sedap Dashboard
         </div>
       </div>
-
     </div>
   );
 }
-
