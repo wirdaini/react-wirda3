@@ -8,6 +8,7 @@ const Dashboard = React.lazy(() => import("./pages/Dashboard"));
 const Orders = React.lazy(() => import("./pages/Orders"));
 const Customers = React.lazy(() => import("./pages/Customers"));
 const Products = React.lazy(() => import("./pages/Products"));
+const Components = React.lazy(() => import("./pages/Components"));
 const ProductDetail = React.lazy(() => import("./pages/ProductDetail"))
 const NotFound = React.lazy(() => import("./pages/NotFound"));
 const Error400 = React.lazy(() => import("./pages/Error400"));
@@ -27,6 +28,7 @@ export default function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/customers" element={<Customers />} />
+          <Route path="/components" element={<Components />} />
           {/* PRODUCTS */}
           <Route path="/products" element={<Products />} />
           {/* DYNAMIC ROUTE */}

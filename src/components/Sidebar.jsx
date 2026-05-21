@@ -16,6 +16,7 @@ export default function Sidebar() {
     { name: "Orders", icon: <FaShoppingBag />, to: "/orders" },
     { name: "Customers", icon: <FaUsers />, to: "/customers" },
     { name: "Products", icon: <FaBoxOpen />, to: "/products" },
+    { name: "Components", icon: <FaBoxOpen />, to: "/components" },
     { name: "Error 400", icon: <FaExclamationTriangle />, to: "/error-400" },
     { name: "Error 401", icon: <FaExclamationTriangle />, to: "/error-401" },
     { name: "Error 403", icon: <FaExclamationTriangle />, to: "/error-403" },

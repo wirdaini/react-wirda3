@@ -1,3 +1,4 @@
+import Card from "../components/Card";
 import PageHeader from "../components/PageHeader";
 
 export default function Dashboard() {
@@ -16,29 +17,29 @@ export default function Dashboard() {
       {/* Statistik Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
         
-        <div className="bg-white p-6 rounded-xl shadow-sm border border-garis">
+        <Card className="bg-white p-6 rounded-xl shadow-sm border border-garis">
           <p className="text-sm text-teks-samping">Total Revenue</p>
           <h3 className="text-2xl font-bold mt-2">Rp 24.500.000</h3>
           <p className="text-sm text-hijau mt-2">+12% from last month</p>
-        </div>
+        </Card>
 
-        <div className="bg-white p-6 rounded-xl shadow-sm border border-garis">
+        <Card className="bg-white p-6 rounded-xl shadow-sm border border-garis">
           <p className="text-sm text-teks-samping">Total Orders</p>
           <h3 className="text-2xl font-bold mt-2">1,245</h3>
           <p className="text-sm text-biru mt-2">+8% from last month</p>
-        </div>
+        </Card>
 
-        <div className="bg-white p-6 rounded-xl shadow-sm border border-garis">
+        <card className="bg-white p-6 rounded-xl shadow-sm border border-garis">
           <p className="text-sm text-teks-samping">New Customers</p>
           <h3 className="text-2xl font-bold mt-2">320</h3>
           <p className="text-sm text-hijau mt-2">+5% growth</p>
-        </div>
+        </card>
 
-        <div className="bg-white p-6 rounded-xl shadow-sm border border-garis">
+        <Card className="bg-white p-6 rounded-xl shadow-sm border border-garis">
           <p className="text-sm text-teks-samping">Pending Orders</p>
           <h3 className="text-2xl font-bold mt-2">18</h3>
           <p className="text-sm text-merah mt-2">Needs attention</p>
-        </div>
+        </Card>
 
       </div>
 
